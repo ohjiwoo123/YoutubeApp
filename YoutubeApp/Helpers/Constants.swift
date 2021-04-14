@@ -12,4 +12,5 @@ struct Constants {
     static let API_URL = "https://www.googleapis.com/youtube/v3"
     static let PLAYLIST_ID = "PLMRqhzcHGw1aAzJ1jwtZeQ4YlfLI2iS30"
     static let YT_EMBED_URL = "https://www.youtube.com/embed/"
+    static let GID_SIGN_IN_ID = "1066721963131-dmhmrneercu72fu8dhuq6fk0l54142ql.apps.googleusercontent.com"
 }

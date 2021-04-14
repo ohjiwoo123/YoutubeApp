@@ -28,7 +28,7 @@ struct VideoRow: View {
                         .resizable()
                         .scaledToFill()
                         // Set the aspect ratio of the frame to be 16:9
-                        .frame(width: geometry.size.width, height: geometry.size.width * 9/16)
+                        .frame(width: geometry.size.width, height: geometry.size.width * 9 / 16)
                         .clipped()
                         .onAppear {
                             // Update the height of the image
