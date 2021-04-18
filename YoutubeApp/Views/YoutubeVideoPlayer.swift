@@ -21,10 +21,10 @@ struct YoutubeVideoPlayer:
         view.backgroundColor = UIColor(backgroundColor)
         
         // Create the url for the video
-        let embedURLString = Constants.YT_EMBED_URL + video.videoId
+        let embedUrlString = Constants.YT_EMBED_URL + video.videoId
         
         // Load the video into the web view
-        let url = URL(string: embedURLString)
+        let url = URL(string: embedUrlString)
         let request = URLRequest(url: url!)
         view.load(request)
         

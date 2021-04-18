@@ -46,7 +46,7 @@ struct Video: Decodable {
         self.title = try snippetContainer.decode(String.self, forKey: .title)
         
         // Parse the description
-        self.title = try snippetContainer.decode(String.self, forKey: .description)
+        self.description = try snippetContainer.decode(String.self, forKey: .description)
         
         // Parse the published date
         self.published = try snippetContainer.decode(Date.self, forKey: .published)
