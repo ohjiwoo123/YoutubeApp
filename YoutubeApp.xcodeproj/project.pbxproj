@@ -22,9 +22,9 @@
 		704C720C2626DEC500838065 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 704C720B2626DEC500838065 /* Home.swift */; };
 		704C72182626ED4200838065 /* GIDSignInManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 704C72172626ED4200838065 /* GIDSignInManager.swift */; };
 		704C721B2626F84B00838065 /* GoogleSignInButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 704C721A2626F84B00838065 /* GoogleSignInButton.swift */; };
-		704C72252627046600838065 /* RatingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 704C72242627046600838065 /* RatingModel.swift */; };
-		704C72282627051500838065 /* LikeAndSubscribe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 704C72272627051500838065 /* LikeAndSubscribe.swift */; };
-		704C722B2627087D00838065 /* YoutubeRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 704C722A2627087D00838065 /* YoutubeRequest.swift */; };
+		7053CDB2262C853300540010 /* RatingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7053CDB1262C853300540010 /* RatingModel.swift */; };
+		7053CDB5262C861E00540010 /* LikeAndSubscribe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7053CDB4262C861E00540010 /* LikeAndSubscribe.swift */; };
+		7053CDB9262C895100540010 /* YoutubeRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7053CDB8262C895100540010 /* YoutubeRequest.swift */; };
 		78A9225C7F48287072840C1E /* Pods_YoutubeApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 897938BB1DFC6ABEBBC024EF /* Pods_YoutubeApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -47,9 +47,9 @@
 		704C720B2626DEC500838065 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 		704C72172626ED4200838065 /* GIDSignInManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GIDSignInManager.swift; sourceTree = "<group>"; };
 		704C721A2626F84B00838065 /* GoogleSignInButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleSignInButton.swift; sourceTree = "<group>"; };
-		704C72242627046600838065 /* RatingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingModel.swift; sourceTree = "<group>"; };
-		704C72272627051500838065 /* LikeAndSubscribe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeAndSubscribe.swift; sourceTree = "<group>"; };
-		704C722A2627087D00838065 /* YoutubeRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YoutubeRequest.swift; sourceTree = "<group>"; };
+		7053CDB1262C853300540010 /* RatingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingModel.swift; sourceTree = "<group>"; };
+		7053CDB4262C861E00540010 /* LikeAndSubscribe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeAndSubscribe.swift; sourceTree = "<group>"; };
+		7053CDB8262C895100540010 /* YoutubeRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YoutubeRequest.swift; sourceTree = "<group>"; };
 		897938BB1DFC6ABEBBC024EF /* Pods_YoutubeApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YoutubeApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F804BB3CE2A5DBBCE9200D3D /* Pods-YoutubeApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YoutubeApp.release.xcconfig"; path = "Target Support Files/Pods-YoutubeApp/Pods-YoutubeApp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -129,7 +129,7 @@
 			children = (
 				700FB35E2625B93500D2E94E /* Constants.swift */,
 				704C71FC2626BDC900838065 /* CacheManager.swift */,
-				704C722A2627087D00838065 /* YoutubeRequest.swift */,
+				7053CDB8262C895100540010 /* YoutubeRequest.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -149,7 +149,7 @@
 				700FB36B26268FFE00D2E94E /* VideoModel.swift */,
 				704C71F92626BBE100838065 /* VideoPreview.swift */,
 				704C72172626ED4200838065 /* GIDSignInManager.swift */,
-				704C72242627046600838065 /* RatingModel.swift */,
+				7053CDB1262C853300540010 /* RatingModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -162,7 +162,7 @@
 				704C72082626C7CB00838065 /* VideoRow.swift */,
 				704C720B2626DEC500838065 /* Home.swift */,
 				704C721A2626F84B00838065 /* GoogleSignInButton.swift */,
-				704C72272627051500838065 /* LikeAndSubscribe.swift */,
+				7053CDB4262C861E00540010 /* LikeAndSubscribe.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -301,15 +301,15 @@
 				700FB3642625C02A00D2E94E /* Response.swift in Sources */,
 				700FB36C26268FFE00D2E94E /* VideoModel.swift in Sources */,
 				700FB3482625736400D2E94E /* YoutubeAppApp.swift in Sources */,
+				7053CDB2262C853300540010 /* RatingModel.swift in Sources */,
 				704C72092626C7CB00838065 /* VideoRow.swift in Sources */,
-				704C72282627051500838065 /* LikeAndSubscribe.swift in Sources */,
-				704C722B2627087D00838065 /* YoutubeRequest.swift in Sources */,
-				704C72252627046600838065 /* RatingModel.swift in Sources */,
+				7053CDB9262C895100540010 /* YoutubeRequest.swift in Sources */,
 				704C72182626ED4200838065 /* GIDSignInManager.swift in Sources */,
 				704C71FD2626BDC900838065 /* CacheManager.swift in Sources */,
 				704C72022626C39600838065 /* YoutubeVideoPlayer.swift in Sources */,
 				704C72062626C5CF00838065 /* VideoDetail.swift in Sources */,
 				700FB35F2625B93500D2E94E /* Constants.swift in Sources */,
+				7053CDB5262C861E00540010 /* LikeAndSubscribe.swift in Sources */,
 				704C71FA2626BBE100838065 /* VideoPreview.swift in Sources */,
 				704C721B2626F84B00838065 /* GoogleSignInButton.swift in Sources */,
 				704C720C2626DEC500838065 /* Home.swift in Sources */,

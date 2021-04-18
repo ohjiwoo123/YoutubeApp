@@ -39,9 +39,9 @@ struct VideoDetail: View {
             // If the user is signed in, show the option to like and subscribe
             if signInManager.signedIn {
                 LikeAndSubscribe(video: video, accessToken: signInManager.accessToken)
-                // Set the buttons to fade on insert
+                // set the buttons to fade on insert
                     .transition(.opacity)
-                // Use the parent view's animation
+                // use the parent videw's animation
                     .animation(.default)
             }
             

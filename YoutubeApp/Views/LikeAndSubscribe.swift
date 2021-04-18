@@ -2,7 +2,7 @@
 //  LikeAndSubscribe.swift
 //  YoutubeApp
 //
-//  Created by ohjiwoo on 2021/04/14.
+//  Created by ohjiwoo on 2021/04/19.
 //
 
 import SwiftUI
@@ -21,11 +21,12 @@ struct LikeAndSubscribe: View {
         return ratingModel.isLiked ? "Unlike" : "Like \u{1f44d}"
     }
     
-    var subscribeText : String {
+    var subscribeText: String {
         // If the user is subscribed, the option is to unsubscribe
         // Otherwise, the option is to subscribe
         return ratingModel.isSubscribed ? "Unsubscribe" : "Subscribe"
     }
+    
     
     var body: some View {
         // Display buttons to like and subscribe
@@ -35,15 +36,16 @@ struct LikeAndSubscribe: View {
             
             Button(likeText) {
                 // Toggle the user's rating for the video
-                ratingModel.getRating()
+                ratingModel.toggleLike()
             }
             
             Spacer()
             
             Button(subscribeText) {
                 // Toggle the user's subscription status
-                ratingModel.getSubscriptionStatus()
+                ratingModel.toggleSubscribe()
             }
+            
             Spacer()
         }
     }
