@@ -4,7 +4,6 @@
 //
 //  Created by ohjiwoo on 2021/04/19.
 //
-
 import Foundation
 import Alamofire
 
@@ -30,7 +29,7 @@ class RatingModel: ObservableObject {
 // Support for reading and updating the like status for a video
 extension RatingModel {
     
-    /// Gets the current users rating for the video.
+    // Gets the current users rating for the video.
     func getRating() {
     
         AF.requestYoutube(
@@ -57,7 +56,7 @@ extension RatingModel {
     
     }
     
-    /// Changes the current users rating for the video.
+    // Changes the current users rating for the video.
     func toggleLike() {
         
         // If the video is currently liked, send a rating of none to remove the like
@@ -84,39 +83,37 @@ extension RatingModel {
 // Support for reading and updating the subscription status of the channel
 extension RatingModel {
     
-    /// Gets the current user's subscription status for the channel.
+    // Gets the current user's subscription status for the channel.
     func getSubscriptionStatus() {
         
         AF.requestYoutube(
             relativeUrl: "subscriptions",
             method: .get,
-            parameters: ["part": "id", "forChannelId": Constants.CHANNEL_ID, "mine": true, "key": Constants.API_KEY],
+            parameters: ["part": "id", "forChannelID": Constants.CHANNEL_ID, "mine": true, "key": Constants.API_KEY],
             accessToken: accessToken
-        ) { response in
+        ){ response in
             
             // Get the response items from the JSON
-            if let json = response.value as? [String: Any],
-               let items = json["itmes"] as? [Any]
-            {
-                // Try to get the subscription ID
-                if let item = items.first as? [String: String],
-                   let id = item["id"] {
+            if let json = response.value as? [String: Any], let items = json["items"] as? [Any] {
+                
+                // Try to get the subscription ID (available if the user is subscribed)
+                if let item = items.first as? [String: String], let id = item["id"] {
                     self.subscriptionId = id
                 }
                 
                 // Update the UI
                 DispatchQueue.main.async {
-                    // The user is subscribed if there are items
+                    // The user is subscribed when there were items returned.
+                    // An empty array of items indicates they do not have a subscription for this channel.
                     self.isSubscribed = !items.isEmpty
                 }
+                
             } else {
                 print("Could not get subscriptions")
             }
-            
         }
     }
-    
-    /// Changes the users subscription status for the channel
+// Changes the users subscription status for the channel
     func toggleSubscribe() {
         
         if isSubscribed {
@@ -126,7 +123,7 @@ extension RatingModel {
         }
     }
     
-    /// Subscribes to the channel
+    // Subscribes to the channel
     func subscribe() {
         
         // HTTP body to send along with the request
@@ -164,22 +161,20 @@ extension RatingModel {
         }
     }
     
-    /// Unsubscribe the user from the channel
+    // Unsubscribe the user from the channel
     func unsubscribe() {
         
         // We must have a subscription ID to unsubscribe
         guard let subscriptionId = subscriptionId else {
-            print("Error : Tried to unsubscribe with no subscription ID.")
-            return 
+            print("Error Tried to unsubscribe with no subscription ID.")
+            return
         }
-     
         AF.requestYoutube(
             relativeUrl: "subscriptions",
             method: .delete,
             parameters: ["id": subscriptionId, "key": Constants.API_KEY],
             accessToken: accessToken
-        ) { response in
-            
+            ) { response in
             // Clear the current subscription ID
             self.subscriptionId = nil
             
@@ -188,6 +183,5 @@ extension RatingModel {
                 self.isSubscribed = false
             }
         }
-        
     }
 }
